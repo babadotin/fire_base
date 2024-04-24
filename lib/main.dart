@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         }
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
-            title: 'Flutter Firestore CRUD',
+            title: 'Firestore CRUD',
             theme: ThemeData(
               primarySwatch: Colors.blueGrey,
             ),
