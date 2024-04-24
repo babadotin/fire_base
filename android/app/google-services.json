@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1016462823989",
+    "project_id": "cool-project-dc03a",
+    "storage_bucket": "cool-project-dc03a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016462823989:android:a777269121a95e2cc3177c",
+        "android_client_info": {
+          "package_name": "com.example.new_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvcDdMcPYM1d_GsSIMFMhALQZUyBWSCa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
