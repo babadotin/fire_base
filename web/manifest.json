@@ -1,6 +1,6 @@
 {
-    "name": "latest_project",
-    "short_name": "latest_project",
+    "name": "fire_base",
+    "short_name": "fire_base",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
