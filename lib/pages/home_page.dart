@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/pages/add_person_page.dart';
-import 'package:new_project/pages/list_person_page.dart';
+import 'package:latest_project/pages/add_person_page.dart';
+import 'package:latest_project/pages/list_person_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
