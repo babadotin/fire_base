@@ -26,7 +26,7 @@ class AddPersonPageState extends State<AddPersonPage> {
   String? selectedGender;
   final CollectionReference persons =
       FirebaseFirestore.instance.collection('persons');
-  late String selectedEmoji = '🤠';
+  late String selectedEmoji = '𖨆';
 
   @override
   void dispose() {
@@ -56,10 +56,10 @@ class AddPersonPageState extends State<AddPersonPage> {
     try {
       await persons.add(
         {
-          'name': name,
-          'email': email,
-          'password': password,
-          'contact': contact,
+          'name': nameController.text,
+          'email': emailController.text,
+          'password': passwordController.text,
+          'contact': contactController.text,
           'gender': gender,
           'dob': dob != null ? Timestamp.fromDate(dob!) : null,
         },
@@ -110,12 +110,11 @@ class AddPersonPageState extends State<AddPersonPage> {
   }
 
   void showSnackBarMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-      ),
+    final snackBar = SnackBar(
+      content: Text(message),
+      duration: const Duration(seconds: 2),
     );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override

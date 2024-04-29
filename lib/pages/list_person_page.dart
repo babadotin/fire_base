@@ -25,6 +25,15 @@ class ListpersonPageState extends State<ListpersonPage> {
     }
   }
 
+  void showSnackBarMessage(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -100,6 +109,7 @@ class ListpersonPageState extends State<ListpersonPage> {
                       deleteUser(
                         personId,
                       );
+                      showSnackBarMessage('Profile deleted successfully!');
                     },
                   ),
                 ],
@@ -111,4 +121,3 @@ class ListpersonPageState extends State<ListpersonPage> {
     );
   }
 }
-// main chahta hun 
