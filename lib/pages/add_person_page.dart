@@ -1,3 +1,4 @@
+import 'package:fire_base/pages/contact_verify_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
@@ -27,6 +28,9 @@ class AddPersonPageState extends State<AddPersonPage> {
   final CollectionReference persons =
       FirebaseFirestore.instance.collection('persons');
   late String selectedEmoji = '𖨆';
+
+  late BuildContext
+      modalContext; // Store the context before the async operation
 
   @override
   void dispose() {
@@ -66,6 +70,14 @@ class AddPersonPageState extends State<AddPersonPage> {
       );
       showSnackBarMessage('Contact saved successfully!');
       clearTextFields();
+      Navigator.push(
+        // ignore: use_build_context_synchronously
+        modalContext,
+        MaterialPageRoute(
+          builder: (context) =>
+              ContactVerifyPage(contact: contactController.text),
+        ),
+      );
     } catch (error) {
       debugPrint('Failed to add user: $error');
     }
@@ -93,6 +105,7 @@ class AddPersonPageState extends State<AddPersonPage> {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
+        modalContext = context;
         return EmojiPicker(
           onEmojiSelected: (category, emoji) {
             if (mounted) {
